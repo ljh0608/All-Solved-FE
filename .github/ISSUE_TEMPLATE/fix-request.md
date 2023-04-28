@@ -13,14 +13,3 @@ assignees: ''
 ## 📝 To-do
 <!-- 진행할 작업에 대해 적어주세요 -->
 - [ ] todo!
-
-refactor-request.md
-
----
-name: Refactor Request
-about: 리펙토링 템플
-title: "[Refactor/#Issue 번호] 제목"
-labels: ''
-assignees: ''
-
----
