@@ -72,3 +72,4 @@ body{
 
 
 `;
+export default GlobalStyle;
