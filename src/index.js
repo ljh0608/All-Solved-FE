@@ -4,15 +4,14 @@ import "./index.css";
 import App from "./App";
 
 import GlobalStyle from "./styles/GlobalStyle";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./pages/Login/Login";
+import { theme } from "./styles/theme";
+import { ThemeProvider } from "styled-components";
+import Router from "./Router/Router";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
+  <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <Routes>
-      <Route path="/login" element={<Login />}></Route>
-      <Route path="/home" element={<App />}></Route>
-    </Routes>
-  </BrowserRouter>,
+    <Router></Router>
+  </ThemeProvider>,
 );

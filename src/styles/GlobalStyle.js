@@ -18,8 +18,11 @@ time, mark, audio, video, input, textarea, select {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  // font: inherit;
   vertical-align: baseline;
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 article, aside, details, figcaption, figure,
@@ -50,7 +53,8 @@ table {
 
 html, body {
   height: 100%;
-//   font-family: 'Roboto', sans-serif;
+  // font-size:62.5%;
+
 }
 
 body{
