@@ -10,14 +10,11 @@ import {
 } from "./Login.style";
 
 const Login = () => {
-  const loginOnclick = async (e) => {
-    alert("카카오 로그인 버튼 클릭");
+  const loginOnclick = async () => {
     try {
       loginService.login();
       window.location.href =
         "https://kauth.kakao.com/oauth/authorize?client_id=bc712decd5a530ca7387c2ab07618a92&redirect_uri=http://localhost:3000/auth/login&response_type=code";
-
-      // console.log("로그인 성공");
     } catch (e) {
       console.error(e);
     }

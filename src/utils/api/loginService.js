@@ -16,7 +16,6 @@ const login = async (access_token) => {
       },
     );
     const accessToken = response.data?.result.accessToken;
-    console.log(JSON.stringify(accessToken));
     localStorage.setItem("token", accessToken);
   } catch (e) {
     console.error(e);
@@ -40,10 +39,8 @@ const KakaoLogin = async (code) => {
         maxBodyLength: Infinity,
       },
     );
-    console.log(response.data.access_token + "  정상작동 KAKAO");
-    const response2 = await login(response.data.access_token);
-    console.log(response2);
 
+    const response2 = await login(response.data.access_token);
     return response2;
   } catch (e) {
     console.error(e);
