@@ -10,11 +10,11 @@ import {
 } from "./Login.style";
 
 const Login = () => {
+  const redirectURI = "http://localhost:3000/allso/auth/kakao_login";
   const loginOnclick = async () => {
     try {
       loginService.login();
-      window.location.href =
-        "https://kauth.kakao.com/oauth/authorize?client_id=bc712decd5a530ca7387c2ab07618a92&redirect_uri=http://localhost:3000/auth/login&response_type=code";
+      window.location.href = `https://kauth.kakao.com/oauth/authorize?client_id=bc712decd5a530ca7387c2ab07618a92&redirect_uri=${redirectURI}&response_type=code`;
     } catch (e) {
       console.error(e);
     }

@@ -1,27 +1,28 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
-import axios from "axios";
-
+import React, { useEffect } from "react";
+import { useLocation, useNavigate, Navigate } from "react-router-dom";
+import Loading from "../Loading/Loading";
 import { loginService } from "../../utils/api/loginService";
 const AuthLogin = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const code = new URLSearchParams(location.search).get("code");
-  let response;
-  try {
-    response = loginService.KakaoLogin(code);
-  } catch (e) {
-    console.error(e);
-  }
 
-  return (
-    <div>
-      <h1>AuthLogin Page</h1>
+  useEffect(() => {
+    const login = async () => {
+      try {
+        await loginService.KakaoLogin(code);
+        navigate("/");
+      } catch (e) {
+        console.error(e);
+      }
+    };
+    if (code) {
+      login();
+    }
+  }, [code]);
 
-      {code}
-      {response.data}
-    </div>
-  );
+  return <Loading></Loading>;
 };
 
 export default AuthLogin;
